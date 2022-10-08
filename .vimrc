@@ -8,6 +8,7 @@ Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'chiel92/vim-autoformat'
 Plugin 'itchyny/lightline.vim'
+Plugin 'scrooloose/nerdtree'
 Plugin 'doums/darcula'
 Plugin 'jparise/vim-graphql'
 Plugin 'dense-analysis/ale'
