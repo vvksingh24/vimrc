@@ -8,10 +8,12 @@ Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'chiel92/vim-autoformat'
 Plugin 'itchyny/lightline.vim'
-Plugin 'scrooloose/nerdtree'
 Plugin 'doums/darcula'
 Plugin 'jparise/vim-graphql'
 Plugin 'dense-analysis/ale'
+Plugin 'vim-python/python-syntax'
+Plugin 'andviro/flake8-vim'
+Plugin 'ambv/black'
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
@@ -20,7 +22,10 @@ call vundle#end()            " required
 
 set nocompatible              " be iMproved, required
 let mapleader = ","
-let g:syntastic_python_checkers = ['pylint']
+let g:ale_fixers = {'python': ['flake8']}
+let g:ale_fixers = {'python': ['black']}
+let g:ale_fix_on_save = 1
+let g:python_highlight_all = 1
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ 'active': {
@@ -74,5 +79,6 @@ map <C-l> <C-w>l
 noremap <leader>w :w<CR>
 noremap <leader>q :q<CR>
 noremap <leader>g :Git
+noremap <leader>d :w !diff % -<CR>
 map <leader><tab> :tabnext<CR>
 "  }}}
