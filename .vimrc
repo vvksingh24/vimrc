@@ -25,6 +25,8 @@ set nocompatible              " be iMproved, required
 let mapleader = ","
 let g:ale_fixers = {'python': ['flake8']}
 let g:ale_fixers = {'python': ['black']}
+let &t_SI .= "\<Esc>[6 q"
+let &t_EI .= "\<Esc>[2 q"
 let g:ale_fix_on_save = 1
 let g:python_highlight_all = 1
 let g:lightline = {
